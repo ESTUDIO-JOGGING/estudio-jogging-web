@@ -1,0 +1,7 @@
+# Netlify: arma el sitio estático (next build con output: 'export') y publica la carpeta out/
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"

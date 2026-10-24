@@ -1,0 +1,49 @@
+/* ─── Burbuja que acompaña al cursor ───────────────────────────────────── */
+.cursor-bubble {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: var(--rosa);
+    color: var(--color-black);
+    padding: 5px 7px 3px 7px;
+    border-radius: 50px 50px 50px 0px;
+    font-size: 18px;
+    font-family: 'Jogging Sans', sans-serif;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left center;
+    z-index: 10000;
+    white-space: nowrap;
+}
+
+/* ─── Garabato de transición al tocar el logo ──────────────────────────── */
+.transition-scribble-frame {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.transition-scribble {
+    position: absolute;
+    top: -50vh;
+    left: -50vw;
+    width: 200vw;
+    height: 200vh;
+    z-index: 9999;
+    pointer-events: none;
+    color: var(--azul);
+}
+
+/* ─── Durante la transición ─────────────────────────────────────────────── */
+body.is-transitioning {
+    pointer-events: none !important;
+}
+
+body.is-transitioning .cursor-bubble {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+    display: none !important;
+}

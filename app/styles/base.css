@@ -1,0 +1,95 @@
+/* ─── Tipografías ───────────────────────────────────────────────────────────── */
+@font-face {
+    font-family: 'Nikkei Journal';
+    src: url('/fonts/Nikkei/PPNikkeiJournal-Light.otf') format('opentype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Nikkei Journal';
+    src: url('/fonts/Nikkei/PPNikkeiJournal-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Nikkei Journal';
+    src: url('/fonts/Nikkei/PPNikkeiJournal-Ultrabold.otf') format('opentype');
+    font-weight: 800;
+}
+@font-face {
+    font-family: 'Reenie Beanie';
+    src: url('/fonts/ReenieBeanie-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+/* 'Jogging Sans': Nikkei Regular para todos los pesos. Textos y párrafos usan esta familia
+   (en negrita el navegador la engrosa); los títulos de marca usan 'Nikkei Journal' con su Ultrabold. */
+@font-face {
+    font-family: 'Jogging Sans';
+    src: url('/fonts/Nikkei/PPNikkeiJournal-Regular.otf') format('opentype');
+    font-weight: 100 900;
+}
+
+/* ─── Colores ────────────────────────────────────────────────────────────────── */
+:root {
+    /* paleta de la marca (ver BRAND.md) */
+    --azul: #0070dc;
+    --blanco-hueso: #f7f8f3;
+    --rosa: #fd6e9a;
+    --crema: #ffe5cc;
+    --rojo: #fb362d;
+    --naranja: #ffa403;
+    --negro: #000000;
+
+    /* neutros */
+    --bg-color: var(--blanco-hueso);
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dark: #1a1a1a;
+    --color-black-soft: #111111;
+    --color-black-deep: #0a0a0a;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--rosa);
+    color: var(--color-black);
+}
+
+/* no se seleccionan imágenes ni videos al arrastrar */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* ─── Elementos base ──────────────────────────────────────────────────────────── */
+body {
+    background-color: var(--bg-color);
+    font-family: 'Jogging Sans', sans-serif;
+    color: var(--color-dark);
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: url("/assets/Cursor SVG/cursor-default.svg") 2 0, auto;
+}
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}

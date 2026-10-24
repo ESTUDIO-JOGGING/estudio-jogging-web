@@ -1,0 +1,13 @@
+/* ─── Estilos del sitio: cada sección tiene su hoja en app/styles/ ─────────── */
+
+@import './styles/base.css';          /* tipografías, colores, reset */
+@import './styles/navbar.css';        /* logo y menú */
+@import './styles/hero.css';          /* secciones de contenido de la home */
+@import './styles/motion-cards.css';  /* "Tu departamento creativo": collage del equipo */
+@import './styles/showreel.css';      /* bloque del reel */
+@import './styles/marquee.css';       /* "Orgullosos de trabajar con": marcas */
+@import './styles/footer.css';        /* footer y créditos */
+@import './styles/home-hero.css';    /* hero ilustrado con botones */
+@import './styles/cursor.css';        /* burbuja del cursor y transición del logo */
+@import './styles/pages.css';         /* páginas internas (servicios, nosotros, proyectos) */
+@import './styles/responsive.css';    /* ajustes para tablet y celular */

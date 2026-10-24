@@ -1,0 +1,86 @@
+/* ─── "A tiempos rápidos, movimientos suaves." ──────────────────────────────
+   La sección queda fija y la frase cruza la pantalla con el scroll (HorizontalWords.jsx). */
+
+.horizontal-words-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    overflow-x: clip; /* las letras animadas asoman por el costado (no en html: rompe position: sticky) */
+}
+
+/* tira que se desplaza: arranca en el borde de la pantalla */
+.horizontal-words__relative {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 25vw;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+/* contenedor de la frase y las flechas (las flechas miden en em) */
+.horizontal-words__track {
+    width: 100%;
+    position: relative;
+}
+
+.horizontal-words__arrow-svg {
+    width: 23.75em;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-160%, -35%);
+}
+
+.horizontal-words__arrow-end-svg {
+    width: 8.4375em;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(50%);
+}
+
+.horizontal-words__h2 {
+    font-family: 'Nikkei Journal', sans-serif;
+    font-size: 8vw;
+    line-height: 1;
+    font-weight: 800;
+    margin: 0;
+    text-transform: none;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+/* párrafo fijo debajo de la frase */
+.horizontal-words__bottom-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 9em);
+    width: max-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+}
+
+.horizontal-words__bottom-text-l {
+    max-width: 34em;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Celular: el párrafo medía 34em (816px) y se cortaba; la frase en 8vw quedaba en 30px */
+@media (max-width: 768px) {
+    .horizontal-words__bottom-text { width: calc(100vw - 32px); }
+    .horizontal-words__bottom-text-l { max-width: 100%; font-size: 1.15rem; }
+    .horizontal-words__h2 { font-size: 20vw; }
+    .horizontal-words__track { font-size: 10px; } /* flechas más chicas */
+}

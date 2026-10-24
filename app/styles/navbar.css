@@ -1,0 +1,220 @@
+/* ─── Logo y menú ──────────────────────────────────────────────────────────── */
+.main-header {
+    width: 100%;
+}
+
+.logo-menu-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 26px 40px; /* un poco de aire alrededor de MENÚ dentro de la nube */
+}
+
+.nav-bar__menu-blob-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.logo-menu-text {
+    position: relative;
+    z-index: 2;
+    font-family: 'Nikkei Journal', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-left: 0;
+    color: var(--azul);
+    letter-spacing: -0.5px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    z-index: 1000;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.on-dark {
+    color: var(--bg-color);
+}
+
+.navbar.on-light {
+    color: var(--color-dark);
+}
+
+.logo-jogging {
+    display: block;
+    width: 150px;
+    height: auto;
+}
+.logo-jogging path{
+    fill: currentColor;
+    transition: fill 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* el hero va directo dentro del header */
+.main-header {
+    width: 100%;
+    position: relative;
+}
+
+/* ─── Fondo oscuro de pantalla completa cuando el menú está abierto ─── */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 99;
+    /* justo debajo del menú (z-index: 100) */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nav-hover-trigger {
+    position: relative;
+}
+
+.nav-popout {
+    position: absolute;
+    background: var(--bg-color);
+    /* beige claro */
+    color: var(--color-dark);
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.nav-popout-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-hover-trigger:hover .nav-popout {
+    pointer-events: auto;
+}
+
+/* texto */
+.nav-popout h4,
+.nav-popout p,
+.nav-popout a {
+    font-family: 'Jogging Sans', sans-serif;
+    margin: 0;
+}
+
+/* --- Caja del menú --- */
+.nav-left .nav-popout {
+    top: 8px;
+    right: -8px;
+    width: 320px;
+    height: 440px;
+}
+
+.nav-left .nav-popout-inner {
+    width: 100%;
+    height: 100%;
+    padding: 55px 24px 24px 24px;
+    /* lugar para la nube de MENÚ arriba */
+    gap: 20px;
+}
+
+.nav-left .logo-menu-container {
+    position: relative;
+    z-index: 105;
+    /* el logo queda por encima del fondo del menú */
+}
+
+/* al abrir el menú el fondo es claro: texto oscuro */
+.nav-left:hover .logo-menu-text {
+    color: var(--color-dark) !important;
+}
+
+/* ítems del menú */
+.nav-menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+/* recorte de la imagen del ítem */
+
+.nav-menu-item__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.nav-menu-badge {
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border-bottom-left-radius: 1px;
+    width: fit-content;
+}
+
+.badge-rosa {
+    background-color: var(--rosa);
+    color: var(--color-dark);
+}
+
+.badge-naranja {
+    background-color: var(--naranja);
+    color: var(--color-dark);
+}
+
+.badge-azul {
+    background-color: var(--azul);
+    color: var(--color-white);
+}
+
+.badge-crema {
+    background-color: var(--crema);
+    color: var(--color-dark);
+}
+
+.nav-menu-title {
+    margin-top: 0;
+    font-size: 1rem;
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.nav-menu-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--azul);
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-decoration: none;
+    margin-top: auto;
+    transition: background-color 0.25s ease;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+.nav-menu-btn:hover {
+    background-color: var(--naranja);
+}

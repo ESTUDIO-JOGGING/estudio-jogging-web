@@ -1,0 +1,17 @@
+# dependencias
+/node_modules
+
+# Next.js: compilación y sitio exportado
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# sistema y logs
+.DS_Store
+Thumbs.db
+npm-debug.log*
+
+# claves y variables de entorno
+.env*
+*.pem
