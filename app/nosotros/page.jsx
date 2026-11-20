@@ -1,5 +1,6 @@
 import InnerPage from '@/components/InnerPage';
 import InnerHero from '@/components/InnerHero';
+import ClutterHero from '@/components/ClutterHero';
 import InnerCta from '@/components/InnerCta';
 import RunLine from '@/components/RunLine';
 
@@ -23,16 +24,23 @@ const ENCONTRAR = [
     { t: 'Una vidriera', d: 'para la inspiración y una mesa de trabajo que potencia el talento a un ritmo constante.', color: 'crema', ilu: '/assets/ilus/una-vidriera-v2.webp' },
 ];
 
+// true: hero "mesa desordenada" a prueba; false vuelve al hero de color anterior
+const HERO_CLUTTER = true;
+
 export default function Nosotros() {
     return (
         <InnerPage>
-            <RunLine color="naranja" shape="arriba" />
-            <InnerHero
-                color="rosa"
-                eyebrow="Nosotros"
-                title={<>Un equipo creativo <br />en movimiento.</>}
-                lead={'Articulamos diseño, comunicación y tecnología 3D. Aportamos talento profesional a marcas que buscan coherencia, estética y ese “no sé qué” editorial.'}
-            />
+            {!HERO_CLUTTER && <RunLine color="naranja" shape="arriba" />}
+            {HERO_CLUTTER ? (
+                <ClutterHero title={<><span className="clutter__title-a">Un equipo creativo</span> <br />en movimiento.</>} lead={'Articulamos diseño, comunicación y tecnología 3D. Aportamos talento profesional a marcas que buscan coherencia, estética y ese “no sé qué” editorial.'} />
+            ) : (
+                <InnerHero
+                    color="rosa"
+                    eyebrow="Nosotros"
+                    title={<>Un equipo creativo <br />en movimiento.</>}
+                    lead={'Articulamos diseño, comunicación y tecnología 3D. Aportamos talento profesional a marcas que buscan coherencia, estética y ese “no sé qué” editorial.'}
+                />
+            )}
 
             <section className="photo-strip" aria-label="El equipo">
                 <div className="photo-strip__track" data-drift="-18">

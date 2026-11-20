@@ -1123,3 +1123,103 @@ body:has(.case) { background-color: #efece2; }
     .reel-modal__close { top: 22px; right: 22px; color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); } /* va encima del video */
     .reel-modal__nav { margin-top: 20px; }
 }
+
+/* ─── Hero "mesa desordenada" (Nosotros, components/ClutterHero.jsx) ─── */
+.clutter {
+    position: relative;
+    background: var(--rosa);
+    color: var(--color-dark);
+    border-radius: 0 0 48px 48px;
+    overflow: hidden;
+}
+
+.clutter__desk {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 100svh;
+    margin: 0 auto;
+}
+
+.clutter__head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: max-content;
+    max-width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.clutter__title {
+    font-family: 'Nikkei Journal', serif;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+}
+
+
+/* primera línea más chica: mismo ancho que "en movimiento." */
+.clutter__title-a { font-size: 0.845em; }
+
+.clutter__lead { max-width: 40ch; font-size: 1.05rem; line-height: 1.45; }
+
+.clutter__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.clutter__item img { width: 100%; height: 100%; object-fit: contain; }
+
+.clutter__modos {
+    position: absolute;
+    left: 50%;
+    bottom: 7.5svh;
+    z-index: 7;
+    display: flex;
+    gap: 8px;
+    translate: -50% 0;
+}
+
+.clutter__modos button {
+    padding: 10px 20px;
+    border: 2px solid var(--color-dark);
+    border-radius: 999px;
+    background: var(--rosa);
+    color: var(--color-dark);
+    font: 600 0.95rem 'Jogging Sans', sans-serif;
+    text-transform: capitalize;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.clutter__modos button.is-active,
+.clutter__modos button:hover { background: var(--color-dark); color: var(--rosa); }
+
+/* como la demo: en pantallas chicas los objetos quedan atrás, en gris y velados */
+@media (max-width: 1000px) {
+    .clutter__desk::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(253, 110, 154, 0.5);
+    }
+    .clutter__item { filter: saturate(0); }
+}
+
+@media (max-width: 768px) {
+    .clutter { border-radius: 0 0 32px 32px; }
+    .clutter__head { width: calc(100vw - 32px); }
+    .clutter__title { font-size: 2.6rem; }
+    .clutter__title br { display: none; }
+    .clutter__title-a { font-size: 1em; }
+}

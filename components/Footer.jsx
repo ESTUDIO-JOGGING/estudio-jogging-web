@@ -140,7 +140,7 @@ export default function Footer() {
                             <div className="credits-content">
                                 <div className="credits-item credit-wiggle">
                                     <div className="overflow-wrapper"><span className="credits-label">Diseño y desarrollo</span></div>
-                                    <div className="overflow-wrapper"><a href="#" className="credits-name" data-wiggle-target="true">Florentin</a></div>
+                                    <div className="overflow-wrapper"><a href="https://florentin.studio" target="_blank" rel="noopener noreferrer" className="credits-name" data-wiggle-target="true">Florentin</a></div>
                                 </div>
                                 <div className="credits-item credit-wiggle">
                                     <div className="overflow-wrapper"><span className="credits-label">Ilustración</span></div>

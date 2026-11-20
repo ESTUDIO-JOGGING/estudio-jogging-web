@@ -1,33 +1,36 @@
-/* ─── Bloque del reel ("Reel de proyectos, próximamente") ──────────────── */
+/* ─── Bloque del reel (video del estudio) ──────────────── */
 .showreel-section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
     background-color: var(--color-black-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
 }
 
-.showreel__content {
-    text-align: center;
+.showreel__video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 100vh;
+    object-fit: cover;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
 }
 
-.showreel__title {
-    font-family: 'Jogging Sans', sans-serif;
-    font-size: 5rem;
-    font-weight: 900;
-    letter-spacing: -3px;
-    color: var(--color-white);
-    margin-bottom: 1rem;
+.showreel__sound {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    padding: 10px 20px;
+    border: 2px solid var(--blanco-hueso);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--blanco-hueso);
+    font: 600 0.95rem 'Jogging Sans', sans-serif;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.showreel__subtitle {
-    font-family: 'Jogging Sans', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.showreel__sound:hover { background: var(--blanco-hueso); color: var(--negro); }
+
+@media (max-width: 768px) {
+    .showreel__sound { right: 12px; bottom: 12px; padding: 6px 14px; font-size: 0.8rem; }
 }
